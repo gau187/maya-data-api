@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h2 My URLS
+  a(href='/users/add', name='submit',value='Add') Add Link
+  if data
+    each datas, i in data
+      p Original Link: #{datas.originalUrl}
+      p Link: http://localhost:3000/#{datas.endpoint}
+      a(href='/users/editLink?endpoint=#{datas.endpoint}') Edit 
+      a(href='/users/deleteLink?endpoint=#{datas.endpoint}') Delete
